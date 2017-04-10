@@ -5,18 +5,20 @@
     "dev:server": "live-server",
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
-    "build:htmllint": "htmlhint --config htmlhint.conf index.html",
+    "build:htmllint": "htmlhint index.html",
     "build:stylelint": "stylelint source/scss/*.scss",
-    "build:js": "standard && node source/js/clicky.js",
+    "build:js": "standard source/js/clicky.js",
     "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
     "deploy:surge": "surge --project . --domain https://skarritt-kg-tgc7noax99ajvzzg.surge.sh/",
     "deploy": "run-s build:* deploy:surge"
   },
   "devDependencies": {
+    "htmlhint": "^0.9.13",
     "live-server": "^1.2.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
     "standard": "^10.0.1",
+    "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "surge": "^0.19.0"
   },
